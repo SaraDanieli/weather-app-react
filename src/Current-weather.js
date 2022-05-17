@@ -30,11 +30,18 @@ export default function CurrentWeather() {
                 13
               </span>
               <span className="units">
-                <a href="#" id="celsius" className="active">
+                <a
+                  href="https://github.com/SaraDanieli/weather-app-react"
+                  id="celsius"
+                  className="active"
+                >
                   °C
                 </a>{" "}
                 |
-                <a href="#" id="fahrenheit">
+                <a
+                  href="https://github.com/SaraDanieli/weather-app-react"
+                  id="fahrenheit"
+                >
                   °F
                 </a>
               </span>
