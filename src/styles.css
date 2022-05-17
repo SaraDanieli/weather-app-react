@@ -1,0 +1,32 @@
+body {
+  font-family: "Ubuntu", sans-serif;
+  background-color: rgb(255, 202, 43, 0.6);
+}
+
+/* ----forecast----
+
+.forecast-icon {
+  width: 65px;
+}
+
+.card {
+  text-align: center;
+}
+
+.day-name {
+  font-size: 15px;
+}
+
+.degrees {
+  text-decoration: none;
+} 
+
+.temp-min {
+  opacity: 0.5;
+}
+
+.forecast-box:hover {
+  background-color: rgb(255, 202, 43, 0.2);
+}
+
+*/

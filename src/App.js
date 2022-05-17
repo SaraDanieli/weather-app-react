@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./styles.css";
+import CityForm from "./City-form";
+import CurrentWeather from "./Current-weather";
+import Footer from "./Footer";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container-sm container-box mx-auto mt-lg-5 mt-2 py-5 border shadow">
+        <CityForm />
+        <CurrentWeather />
+        {/*
+        ------forecast-----
+        <div
+          className="row mt-5 mx-auto justify-content-center"
+          id="forecast"
+        ></div> */}
+      </div>
+      <Footer />
     </div>
   );
 }

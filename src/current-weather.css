@@ -1,0 +1,107 @@
+.Current-weather h1 {
+  color: #5c6369;
+  font-size: 50px;
+  font-weight: 900;
+}
+
+.Current-weather .weather-description {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.Current-weather .weather-description::first-letter {
+  text-transform: capitalize;
+}
+
+.Current-weather .today-forecast-icon {
+  width: 140px;
+}
+
+.Current-weather .temperature-box {
+  height: 57px;
+}
+
+.Current-weather .temperature-box a {
+  text-decoration: none;
+}
+
+.Current-weather .units {
+  position: relative;
+  top: -50px;
+}
+
+.Current-weather .temperature {
+  font-size: 60px;
+  position: relative;
+  top: -20px;
+  color: #5c6369;
+}
+
+.Current-weather .active {
+  color: black;
+  text-decoration: none;
+  cursor: default;
+}
+
+.Current-weather .active:hover {
+  color: black;
+}
+
+@media (max-width: 1176px) {
+  .Current-weather #current-city {
+    font-size: 40px;
+  }
+
+  .Current-weather .temperature {
+    font-size: 40px;
+    position: relative;
+    top: -32px;
+  }
+
+  .temperature-box {
+    height: 30px;
+    margin-top: 20px;
+  }
+
+  .Current-weather .today-forecast-icon {
+    width: 130px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .Current-weather .weather-description,
+  .wind-humidity,
+  #current-time,
+  #current-day {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 374px) {
+  .Current-weather #current-city {
+    font-size: 30px;
+  }
+
+  .Current-weather .temperature {
+    font-size: 25px;
+    position: relative;
+    top: -42px;
+  }
+
+  .Current-weather .today-forecast-icon {
+    width: 100px;
+  }
+
+  .Current-weather .weather-description,
+  .wind-humidity,
+  .units,
+  #current-time,
+  #current-day {
+    font-size: 14px;
+  }
+
+  .Current-weather .temperature-box {
+    height: 5px;
+    margin-top: 30px;
+  }
+}
