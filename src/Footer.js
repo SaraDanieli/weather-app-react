@@ -6,7 +6,11 @@ export default function Footer() {
     <div className="Footer">
       {" "}
       <p className="git-hub-rep">
-        <a href="#" target="_blank" rel="noreferrer">
+        <a
+          href="https://github.com/SaraDanieli/weather-app-react"
+          target="_blank"
+          rel="noreferrer"
+        >
           Open-source code
         </a>{" "}
         by Sara Danieli
