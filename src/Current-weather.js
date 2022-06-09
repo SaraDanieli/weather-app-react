@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import FormattedDate from "./FormattedDate.js";
 import "./current-weather.css";
 import axios from "axios";
 
@@ -12,6 +13,7 @@ export default function CurrentWeather() {
       cityName: response.data.name,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
+      date: new Date(response.data.dt * 1000),
       wind: response.data.wind.speed,
       description: response.data.weather[0].description,
     });
@@ -30,8 +32,7 @@ export default function CurrentWeather() {
               {weather.description}
             </div>
             <div className="col-12 mb-4">
-              <span id="current-day">Saturday</span>
-              <span id="current-time"> 12:13</span>
+              <FormattedDate date={weather.date} />
             </div>
           </div>
           <div className="col-lg-2 col-5 col-sm-4 offset-sm-2 offset-lg-1 px-4 ps-sm-5 ps-lg-0">
