@@ -1,35 +1,73 @@
-import React from "react";
+import React, { useState } from "react";
+import CurrentWeather from "./Current-weather";
+import axios from "axios";
 
 export default function CityForm() {
-  return (
-    <div className="CityForm">
-      <form id="search-city-form" className="pt-lg-4">
-        <div className="row">
-          <div className="col-10 offset-1 col-sm-10 col-lg-7 offset-sm-1">
-            <input
-              type="text"
-              id="city-input"
-              className="form-control shadow-sm"
-              placeholder="Enter a city..."
-            />
+  const [weather, setWeather] = useState({ ready: false });
+  const [city, setCity] = useState("Alvito");
+
+  function handleResponse(response) {
+    console.log(response);
+    setWeather({
+      ready: true,
+      cityName: response.data.name,
+      temperature: response.data.main.temp,
+      humidity: response.data.main.humidity,
+      date: new Date(response.data.dt * 1000),
+      wind: response.data.wind.speed,
+      description: response.data.weather[0].description,
+    });
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    alert(city);
+  }
+
+  function handleChange(event) {
+    setCity(event.target.value);
+  }
+
+  if (weather.ready) {
+    return (
+      <div className="CityForm">
+        <form onSubmit={handleSubmit} id="search-city-form" className="pt-lg-4">
+          <div className="row">
+            <div className="col-10 offset-1 col-sm-10 col-lg-7 offset-sm-1">
+              <input
+                onChange={handleChange}
+                type="text"
+                id="city-input"
+                className="form-control shadow-sm"
+                placeholder="Enter a city..."
+              />
+            </div>
+            <div className="col-sm-1 ms-3">
+              <input
+                type="submit"
+                className="btn btn-warning d-none d-lg-block"
+                value="search"
+              />
+            </div>
+            <div className="col-sm-1 ms-4">
+              <input
+                id="current-location-weather"
+                type="button"
+                className="btn btn-secondary d-none d-lg-block"
+                value="current"
+              />
+            </div>
           </div>
-          <div className="col-sm-1 ms-3">
-            <input
-              type="submit"
-              className="btn btn-warning d-none d-lg-block"
-              value="search"
-            />
-          </div>
-          <div className="col-sm-1 ms-4">
-            <input
-              id="current-location-weather"
-              type="button"
-              className="btn btn-secondary d-none d-lg-block"
-              value="current"
-            />
-          </div>
-        </div>
-      </form>
-    </div>
-  );
+        </form>
+        <CurrentWeather data={weather} />
+      </div>
+    );
+  } else {
+    let apiKey = "926d89a58987d421e38ebd919d3dc9fe";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat={lat}&q=${city}&appid=${apiKey}&units=metric`;
+
+    axios.get(apiUrl).then(handleResponse);
+
+    return "loading...";
+  }
 }
