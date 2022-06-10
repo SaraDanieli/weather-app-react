@@ -38,13 +38,12 @@ export default function CityForm() {
   if (weather.ready) {
     return (
       <div className="CityForm">
-        <form onSubmit={handleSubmit} id="search-city-form" className="pt-lg-4">
+        <form onSubmit={handleSubmit} className="pt-lg-4">
           <div className="row">
             <div className="col-10 offset-1 col-sm-10 col-lg-8 offset-sm-1">
               <input
                 onChange={handleChange}
                 type="text"
-                id="city-input"
                 className="form-control shadow-sm"
                 placeholder="Enter a city..."
               />

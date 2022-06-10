@@ -6,14 +6,16 @@ export default function Footer() {
     <div className="Footer">
       {" "}
       <p className="git-hub-rep">
+        This project was coded by Sara Danieli and it is open-sourced on{" "}
         <a
           href="https://github.com/SaraDanieli/weather-app-react"
           target="_blank"
           rel="noreferrer"
         >
-          Open-source code
+          GitHub
         </a>{" "}
-        by Sara Danieli
+        and hosted on{" "}
+        <a href="https://mellifluous-cat-a4bb99.netlify.app/">Netlify</a>
       </p>{" "}
     </div>
   );

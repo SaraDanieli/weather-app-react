@@ -9,7 +9,7 @@ export default function CurrentWeather(props) {
       <div className="row mt-4">
         <div className="col-12 col-lg-3 offset-lg-2 offset-1 mt-lg-4 pt-1 me-lg-3 ps-4 ps-lg-0">
           <h1 className="current-city">{props.data.cityName}</h1>
-          <div className="col-12 weather-description" id="weather-description">
+          <div className="col-12 weather-description">
             {props.data.description}
           </div>
           <div className="col-12 mb-4">
