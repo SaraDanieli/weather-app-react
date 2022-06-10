@@ -13,8 +13,8 @@
   text-transform: capitalize;
 }
 
-.Current-weather .today-forecast-icon {
-  width: 140px;
+.Current-weather canvas {
+  margin-top: 25px;
 }
 
 .Current-weather .temperature-box {
@@ -63,10 +63,9 @@
     margin-top: 20px;
   }
 
-  .Current-weather .today-forecast-icon {
-    width: 130px;
-    display: block;
-    margin: 0 auto;
+  .Current-weather canvas {
+    width: 90px;
+    margin-left: 20px;
   }
 
   .Current-weather .weather-description,
@@ -88,8 +87,8 @@
     top: -42px;
   }
 
-  .Current-weather .today-forecast-icon {
-    width: 100px;
+  .Current-weather canvas {
+    width: 60px;
   }
 
   .Current-weather .weather-description,

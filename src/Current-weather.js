@@ -1,5 +1,6 @@
 import FormattedDate from "./FormattedDate.js";
 import "./current-weather.css";
+import ForecastIcon from "./ForecastIcon.js";
 
 export default function CurrentWeather(props) {
   return (
@@ -15,12 +16,7 @@ export default function CurrentWeather(props) {
           </div>
         </div>
         <div className="col-lg-2 col-5 col-sm-4 offset-sm-2 offset-lg-1 px-4 ps-sm-5 ps-lg-0">
-          <img
-            id="forecast-icon"
-            className="today-forecast-icon"
-            src={props.data.icon}
-            alt=""
-          />
+          <ForecastIcon code={props.data.icon} />
         </div>
         <div className="col-lg-2 col-6">
           <div className="row pt-4 mt-lg-2 mt-2">
