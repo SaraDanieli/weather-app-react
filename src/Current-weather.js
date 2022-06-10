@@ -18,7 +18,7 @@ export default function CurrentWeather(props) {
           <img
             id="forecast-icon"
             className="today-forecast-icon"
-            src="http://openweathermap.org/img/wn/01d@2x.png"
+            src={props.data.icon}
             alt=""
           />
         </div>

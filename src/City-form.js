@@ -7,21 +7,28 @@ export default function CityForm() {
   const [city, setCity] = useState("Alvito");
 
   function handleResponse(response) {
-    console.log(response);
     setWeather({
       ready: true,
       cityName: response.data.name,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       date: new Date(response.data.dt * 1000),
+      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       wind: response.data.wind.speed,
       description: response.data.weather[0].description,
     });
   }
 
+  function search() {
+    let apiKey = "926d89a58987d421e38ebd919d3dc9fe";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat={lat}&q=${city}&appid=${apiKey}&units=metric`;
+
+    axios.get(apiUrl).then(handleResponse);
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
-    alert(city);
+    search();
   }
 
   function handleChange(event) {
@@ -63,11 +70,7 @@ export default function CityForm() {
       </div>
     );
   } else {
-    let apiKey = "926d89a58987d421e38ebd919d3dc9fe";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat={lat}&q=${city}&appid=${apiKey}&units=metric`;
-
-    axios.get(apiUrl).then(handleResponse);
-
+    search();
     return "loading...";
   }
 }
