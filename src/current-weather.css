@@ -48,7 +48,7 @@
 }
 
 @media (max-width: 1176px) {
-  .Current-weather #current-city {
+  .Current-weather .current-city {
     font-size: 40px;
   }
 
@@ -69,15 +69,17 @@
   }
 
   .Current-weather .weather-description,
-  .wind-humidity,
-  #current-time,
-  #current-day {
+  .wind-humidity {
     font-size: 16px;
+  }
+
+  .Current-weather .temperature-box {
+    height: 25px;
   }
 }
 
 @media (max-width: 374px) {
-  .Current-weather #current-city {
+  .Current-weather .current-city {
     font-size: 30px;
   }
 
@@ -93,9 +95,7 @@
 
   .Current-weather .weather-description,
   .wind-humidity,
-  .units,
-  #current-time,
-  #current-day {
+  .units {
     font-size: 14px;
   }
 

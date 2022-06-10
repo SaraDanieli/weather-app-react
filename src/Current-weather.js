@@ -8,7 +8,7 @@ export default function CurrentWeather(props) {
     <div className="Current-weather">
       <div className="row mt-4">
         <div className="col-12 col-lg-3 offset-lg-2 offset-1 mt-lg-4 pt-1 me-lg-3 ps-4 ps-lg-0">
-          <h1 id="current-city">{props.data.cityName}</h1>
+          <h1 className="current-city">{props.data.cityName}</h1>
           <div className="col-12 weather-description" id="weather-description">
             {props.data.description}
           </div>
@@ -25,12 +25,8 @@ export default function CurrentWeather(props) {
               <WeatherTemperature temperature={props.data.temperature} />
             </div>
             <div className="wind-humidity">
-              <div className="col-12">
-                Wind: <span id="wind-speed">{props.data.wind}</span> km/h
-              </div>
-              <div className="col-12">
-                Humidity: <span id="humidity">{props.data.humidity}</span>%
-              </div>
+              <div className="col-12">Wind: {props.data.wind} km/h</div>
+              <div className="col-12">Humidity: {props.data.humidity}%</div>
             </div>
           </div>
         </div>
