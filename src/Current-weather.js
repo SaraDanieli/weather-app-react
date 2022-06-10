@@ -1,6 +1,7 @@
 import FormattedDate from "./FormattedDate.js";
 import "./current-weather.css";
 import ForecastIcon from "./ForecastIcon.js";
+import WeatherTemperature from "./WeatherTemperature.js";
 
 export default function CurrentWeather(props) {
   return (
@@ -21,25 +22,7 @@ export default function CurrentWeather(props) {
         <div className="col-lg-2 col-6">
           <div className="row pt-4 mt-lg-2 mt-2">
             <div className="col-12 fw-bold temperature-box">
-              <span id="current-temperature" className="temperature">
-                {Math.round(props.data.temperature)}
-              </span>
-              <span className="units">
-                <a
-                  href="https://github.com/SaraDanieli/weather-app-react"
-                  id="celsius"
-                  className="active"
-                >
-                  °C
-                </a>{" "}
-                |
-                <a
-                  href="https://github.com/SaraDanieli/weather-app-react"
-                  id="fahrenheit"
-                >
-                  °F
-                </a>
-              </span>
+              <WeatherTemperature temperature={props.data.temperature} />
             </div>
             <div className="wind-humidity">
               <div className="col-12">
