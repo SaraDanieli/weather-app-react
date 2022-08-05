@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CurrentWeather from "./Current-weather";
 import axios from "axios";
+import WeatherForecast from "./WeatherForecast";
 
 export default function CityForm() {
   const [weather, setWeather] = useState({ ready: false });
@@ -38,26 +39,29 @@ export default function CityForm() {
   if (weather.ready) {
     return (
       <div className="CityForm">
-        <form onSubmit={handleSubmit} className="pt-lg-4">
-          <div className="row">
-            <div className="col-10 offset-1 col-sm-10 col-lg-8 offset-sm-1">
-              <input
-                onChange={handleChange}
-                type="text"
-                className="form-control shadow-sm"
-                placeholder="Enter a city..."
-              />
+        <div>
+          <form onSubmit={handleSubmit} className="pt-lg-4">
+            <div className="row">
+              <div className="col-10 offset-1 col-sm-10 col-lg-8 offset-sm-1">
+                <input
+                  onChange={handleChange}
+                  type="text"
+                  className="form-control shadow-sm"
+                  placeholder="Enter a city..."
+                />
+              </div>
+              <div className="col-sm-1 ms-3">
+                <input
+                  type="submit"
+                  className="btn btn-warning d-none d-lg-block"
+                  value="search"
+                />
+              </div>
             </div>
-            <div className="col-sm-1 ms-3">
-              <input
-                type="submit"
-                className="btn btn-warning d-none d-lg-block"
-                value="search"
-              />
-            </div>
-          </div>
-        </form>
-        <CurrentWeather data={weather} />
+          </form>
+          <CurrentWeather data={weather} />
+        </div>
+        <WeatherForecast />
       </div>
     );
   } else {
