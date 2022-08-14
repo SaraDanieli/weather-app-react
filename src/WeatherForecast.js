@@ -3,15 +3,15 @@ import ForecastIcon from "./ForecastIcon.js";
 import "./WeatherForecast.css";
 import axios from "axios";
 
-export default function WeatherForecast() {
+export default function WeatherForecast(props) {
   function handleResponse(response) {
-    console.log(response);
+    console.log(response.data);
   }
 
-  let lat = 40;
-  let lon = 74;
+  let lat = props.coordinates.lat;
+  let lon = props.coordinates.lon;
   let apiKey = "926d89a58987d421e38ebd919d3dc9fe";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(handleResponse);
   return (
     <div className="WeatherForecast">

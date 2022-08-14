@@ -8,8 +8,10 @@ export default function CityForm() {
   const [city, setCity] = useState("Alvito");
 
   function handleResponse(response) {
+    console.log(response);
     setWeather({
       ready: true,
+      coordinates: response.data.coord,
       cityName: response.data.name,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
@@ -61,7 +63,7 @@ export default function CityForm() {
           </form>
           <CurrentWeather data={weather} />
         </div>
-        <WeatherForecast />
+        <WeatherForecast coordinates={weather.coordinates} />
       </div>
     );
   } else {
