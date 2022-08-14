@@ -15,7 +15,13 @@ export default function Footer() {
           GitHub
         </a>{" "}
         and hosted on{" "}
-        <a href="https://mellifluous-cat-a4bb99.netlify.app/">Netlify</a>
+        <a
+          href="https://mellifluous-cat-a4bb99.netlify.app/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Netlify
+        </a>
       </p>{" "}
     </div>
   );

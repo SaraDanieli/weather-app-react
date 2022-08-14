@@ -24,12 +24,6 @@ export default function WeatherForecastDay(props) {
       <p className="card-text">
         {" "}
         <ForecastIcon code={props.data.weather[0].icon} size={60} />
-        {/*  <img
-                id="forecast-icon"
-                class="forecast-icon"
-                src="http://openweathermap.org/img/wn/10d@2x.png"
-                alt=""
-              /> */}
       </p>
       <p>
         <span className="temp-min">{minTemperature()}°</span> /{" "}
